@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar/Navbar';
 import React from 'react'
 
 /**
@@ -12,6 +13,7 @@ import React from 'react'
 const Orders = () => {
   return (
     <>
+      <Navbar />
       <div>Order history page for delivery man</div>
     </>
   )

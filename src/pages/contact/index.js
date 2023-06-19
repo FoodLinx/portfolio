@@ -3,7 +3,10 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div>FoodLinx Contact Page</div>
+    <>
+      <Navbar />
+      <div>FoodLinx Contact Page</div>
+    </>
   )
 }
 

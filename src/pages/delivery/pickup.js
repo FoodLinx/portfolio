@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar/Navbar';
 import React from 'react'
 
 
@@ -13,6 +14,7 @@ import React from 'react'
 const PickUp = () => {
   return  (
     <>
+      <Navbar />
       <div>Order PickUp Page for Delivery man</div>
     </>
   )

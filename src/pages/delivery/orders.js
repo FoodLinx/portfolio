@@ -12,7 +12,9 @@ import React from 'react'
 const Orders = () => {
   return (
     <>
-      
+      <div>Order history page for delivery man</div>
     </>
   )
 }
+
+export default Orders;

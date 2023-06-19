@@ -1,0 +1,39 @@
+.container{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper{
+  width: 80%;
+  padding: 2rem;
+  margin: 4rem;
+}
+
+.top{
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.0rem
+}
+
+.title{
+
+}
+
+.searchBar {
+  width: 60%;
+  height: 50px;
+  border: 2px solid #B2BCAA;
+  border-radius: 45%;
+  background-color: #B2BCAA;
+}
+
+.categories {
+
+}
+
+
+.bottom{
+
+}

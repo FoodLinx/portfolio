@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
+import styles from '@/styles/signup/restaurant.module.css'
 
 const Restaurant = () => {
 
@@ -30,17 +31,19 @@ const Restaurant = () => {
 
 
   return (
-    <div>
-      <div>
-        <h2>Register Your Business Here</h2>
-        <form onSubmit={registerBusiness}>
-          <input name='owner' id='owner' type="text" placeholder="Business Owner Name..." />
-          <input name='name' id='name' type="text" placeholder="Business Name..." />
-          <input name='email' id='email' type="text" placeholder="Business Email..." />
-          <input name='address' id='address' type="text" placeholder="Business Address..." />
-          <input name='contact' id='contact' type="text" placeholder="Business Number..." />
-          <button type="submit">Register</button>
-        </form>
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
+        <div className={styles.formBox}>
+          <h2>Register Your Business Here</h2>
+          <form onSubmit={registerBusiness}>
+            <input name='owner' id='owner' type="text" placeholder="Business Owner Name..." />
+            <input name='name' id='name' type="text" placeholder="Business Name..." />
+            <input name='email' id='email' type="text" placeholder="Business Email..." />
+            <input name='address' id='address' type="text" placeholder="Business Address..." />
+            <input name='contact' id='contact' type="text" placeholder="Business Number..." />
+            <button type="submit">Register</button>
+          </form>
+        </div>
       </div>
     </div>
   )

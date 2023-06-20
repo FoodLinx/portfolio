@@ -35,7 +35,7 @@
   font-size: 30px;
   text-decoration: none;
   color: #B2BCAA;
-  margin-bottom: 3.75rem;
+  margin-bottom: 1.0rem;
 }
 
 .formBox>form>input {
@@ -56,7 +56,7 @@
   padding: 0.5rem 1.25rem;
   background-color: #B2BCAA;
   color: #252323;
-  width: 60%;
+  width: 40%;
   text-align: center;
 
 }

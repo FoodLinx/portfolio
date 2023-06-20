@@ -7,11 +7,11 @@ const Driver = () => {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.formBox}>
-          <h2 className={styles.title}>Register as a Driver Here</h2>
           <form onSubmit="#Function goes here">
+            <h2>Register As Our Driver</h2>
             <input type="text" placeholder="Enter Your Name..." />
             <input type="text" placeholder="Enter Your Email Address..." />
-            <input type="text" placeholder="Enter YOur Mobile Number..." />
+            <input type="text" placeholder="Enter Your Mobile Number..." />
             <input type="text" placeholder="Vehicle Reg, Number..." />
             <button type="submit">Register</button>
           </form>

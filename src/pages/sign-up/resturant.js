@@ -35,7 +35,7 @@ const Restaurant = () => {
       <div className={styles.wrapper}>
         <div className={styles.formBox}>
           <form onSubmit={registerBusiness}>
-            <h2>Register Your Business Here</h2>
+            <h2>Register Your Business</h2>
             <input name='owner' id='owner' type="text" placeholder="Business Owner Name..." />
             <input name='name' id='name' type="text" placeholder="Business Name..." />
             <input name='email' id='email' type="text" placeholder="Business Email..." />

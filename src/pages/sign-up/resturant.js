@@ -5,7 +5,7 @@ import styles from '@/styles/signup/restaurant.module.css'
 
 const Restaurant = () => {
 
-    const router = useRouter()
+  const router = useRouter()
 
   // Handles the submit event on form submit.
   const registerBusiness = async (event) => {
@@ -18,13 +18,13 @@ const Restaurant = () => {
       contact: event.target.contact.value,
     }
     const options = {
-        headers: {
+      headers: {
         'Content-Type': 'application/json',
       }
     }
     const response = await axios.post('http://localhost:3000/api/register/business', formData, options)
-    if (response.status === 201){
-        router.push('/sign-up/success')
+    if (response.status === 201) {
+      router.push('/sign-up/success')
     }
     console.log(response.data)
   }
@@ -34,8 +34,8 @@ const Restaurant = () => {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.formBox}>
-          <h2>Register Your Business Here</h2>
           <form onSubmit={registerBusiness}>
+            <h2>Register Your Business Here</h2>
             <input name='owner' id='owner' type="text" placeholder="Business Owner Name..." />
             <input name='name' id='name' type="text" placeholder="Business Name..." />
             <input name='email' id='email' type="text" placeholder="Business Email..." />

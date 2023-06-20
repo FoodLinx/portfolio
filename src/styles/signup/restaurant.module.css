@@ -6,7 +6,7 @@
 
 .wrapper {
   height: 100%;
-  width: 85%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -15,19 +15,48 @@
 
 .formBox {
   height: 100%;
-  width: 80%;
+  width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-
-  border: 2px solid #ffd700;
 }
 
-.formBox>h2 {
+.formBox>form {
+  border: 2px solid #B2BCAA;
+  border-radius: 8px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.0rem;
+}
+
+.formBox>form>h2 {
   font-size: 30px;
   text-decoration: none;
   color: #B2BCAA;
   margin-bottom: 3.75rem;
 }
 
+.formBox>form>input {
+  outline: none;
+  border: 2px solid #B2BCAA;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  height: 30px;
+}
+
+.formBox>form>button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 0.5rem 1.25rem;
+  background-color: #B2BCAA;
+  color: #252323;
+  width: 60%;
+  text-align: center;
+
+}

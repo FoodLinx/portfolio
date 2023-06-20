@@ -45,3 +45,8 @@
 ### Admin
 - "/admin/dashboard
 
+### Non-users
+- '/sign-up/resturant'
+- '/sign-up/driver'
+- '/about'
+- '/contact'

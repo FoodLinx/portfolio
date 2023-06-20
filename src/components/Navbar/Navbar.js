@@ -2,34 +2,39 @@ import React, { useEffect, useState } from 'react'
 import styles from './navbar.module.css'
 import Link from 'next/link'
 import { useUser } from '@auth0/nextjs-auth0/client'
+import axios from 'axios'
 
 
-const Navbar = () => {
+
+export default function Navbar() {
   const { user } = useUser()
-  const [isSubscriber, setIsSubscriber] = useState(false)
+  const [role, setRole] = useState('')
 
-  useEffect( () => {
 
-    const axios = require("axios").default;
-
-    const options = {
+  
+  useEffect(() => {
+    async function run() {
+      let options = {
         method: 'GET',
-        url: 'https://dev-tquwkhviamycqhyx.us.auth0.com/api/v2/users',
-        params: { q: 'email:"some-example@email.com"'},
-        headers: {authorization: `Bearer ${process.env.AUTH0_TOKEN}`, 'content-type': 'application/json'}
-    };
-    // in my case I needed the app_metadata which held the users subscription status. But you can access anything you need similar to this
-      axios.request(options).then(function (response) {
-          /* if(response.data[0]['app_metadata']['subscription_status'] === true){
-              setIsSubscriber(true);
-          } */
-          console.log(response.data)
-      }).catch(function (error) {
-          console.error(error);
-      });
-    }, [])
+        headers: {
+          'content-type': 'application/json'
+        }
+      }
+      const response = await axios.get('http://localhost:3000/api/hello', options)
+      if (response.status === 200) {
+          setRole(response.data.role)
+        }
+      else if (response.status === 203){
+        console.log(response.data.message)
+      }
+      else {
+        console.log('fatal error')
+      }
+    }
+    run()
+  })
 
-
+  
   
   return (
     <>  
@@ -53,13 +58,16 @@ const Navbar = () => {
               <div className={styles.link}>
                 <Link href="/contact">Contact</Link>
               </div>
+              <div className={styles.link}>
+                <Link href="/api/auth/login">Login/SignUp</Link>
+              </div>
               </>
             )}
             
 
             {/* if the logged in user is a user then show following links */}
             {
-              user && /*user.user_metadata.role == "user" &&*/ (
+              user && role === "user" && (
                 <>
                 <div className={styles.link}>
                   <Link href="#">Basket</Link>
@@ -73,7 +81,7 @@ const Navbar = () => {
             
 
             {/* if the logged in user is a resturant owner then show following links */}
-            { user && /*user.user_metadata.role == "resturant" &&*/ (
+            { user && role === "resturant" && (
               <>
               <div className={styles.link}>
                 <Link href="#">
@@ -102,7 +110,7 @@ const Navbar = () => {
             {/* Delivery links */}
 
             {
-              user && /*user.user_metadata.role == "driver" &&*/ (
+              user && role === "driver" && (
                 <>
                 <div className={styles.link}>
                   <Link href="#">
@@ -120,7 +128,7 @@ const Navbar = () => {
              {/* System administrator */}
 
              {
-              user && /*user.user_metadata.role == "admin" &&*/ (
+              user && role === "admin" && (
                 <>
                 <div className={styles.link}>
                   <Link href="#">
@@ -134,6 +142,12 @@ const Navbar = () => {
                 </div>
                 </>
             )}
+
+            {
+              user && (
+                <Link href='/api/auth/logout'>logout</Link>
+              )
+            }
           </div>
         </div>
       </div>
@@ -141,4 +155,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+

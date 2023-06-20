@@ -1,11 +1,15 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import Navbar from '@/components/Navbar/Navbar'
-import Footer from '@/components/Footer/Footer'
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
+import deliveryImage from "../../public/delivery-image.jpg";
+import eatingImage from "../../public/eating-image.jpg";
+import restaurantImage from "../../public/restaurant-image.jpg";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -18,8 +22,48 @@ export default function Home() {
       </Head>
       <div>
         <Navbar />
+        <div className={styles.container}>
+          <div className={styles.wrapper}>
+            <div className={styles.mealItems}>
+              <div className={styles.title}>
+                <h3>Pick Something Delicious</h3>
+                <p>Catalog will go here to display meal items</p>
+              </div>
+            </div>
+
+            <div className={styles.hero}>
+              <div className={styles.wrapper}>
+                <div className={styles.left}>
+                  <Image src={eatingImage} alt="meal-dining" />
+                  <p>
+                    <Link href="/">Create an account here</Link>
+                  </p>
+                </div>
+                <div className={styles.center}>
+                  <Image src={restaurantImage} alt="restaurant-image" />
+                  <p>
+                    <Link href="/sign-up/resturant">
+                      Sign up your business here
+                    </Link>
+                  </p>
+                </div>
+                <div className={styles.right}>
+                  <Image src={deliveryImage} alt="driver-image" />
+                  <p>
+                    <Link href="/sign-up/driver">Sign to deliver here</Link>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.map}>
+              <h2>Restaurants Near You</h2>
+              Will display an embedded map here just to showcase location
+            </div>
+          </div>
+        </div>
         <Footer />
       </div>
     </>
-  )
+  );
 }

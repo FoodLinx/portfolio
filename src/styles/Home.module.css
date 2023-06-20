@@ -1,0 +1,120 @@
+.container {
+  width: 100%;
+  margin: 0;
+  color: #B2BCAA
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mealItems {
+  width: 100%;
+  height: 1000px;
+}
+
+.title {
+  margin-top: 2.5rem;
+  color: #B2BCAA;
+  font-size: 40px;
+}
+
+.title>p {
+  margin-top: 3rem;
+  font-size: 20px;
+}
+
+.hero {
+  height: 400px;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.hero>.wrapper {
+  height: 100%;
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.hero>.wrapper>.left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero>.wrapper>.left>img {
+  height: 300px;
+  width: 300px;
+  border-radius: 6px;
+}
+
+.hero>.wrapper>.left>p>a {
+  text-decoration: none;
+  color: #B2BCAA;
+}
+
+.hero>.wrapper>.left>p>a:hover {
+  color: #ffd700;
+  cursor: pointer;
+}
+
+.hero>.wrapper>.center {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero>.wrapper>.center>img {
+  height: 300px;
+  width: 300px;
+  border-radius: 6px;
+}
+
+.hero>.wrapper>.center>p>a {
+  text-decoration: none;
+  color: #B2BCAA;
+}
+
+.hero>.wrapper>.center>p>a:hover {
+  color: #ffd700;
+  cursor: pointer;
+}
+
+.hero>.wrapper>.right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero>.wrapper>.right>img {
+  height: 300px;
+  width: 300px;
+  border-radius: 6px;
+}
+
+.hero>.wrapper>.right>p>a {
+  text-decoration: none;
+  color: #B2BCAA;
+}
+
+.hero>.wrapper>.right>p>a:hover {
+  color: #ffd700;
+  cursor: pointer;
+}
+
+.map {
+  margin-top: 5rem;
+  width: 100%;
+  height: 600px;
+}
+
+.map>h2 {
+  font-size: 30px;
+}

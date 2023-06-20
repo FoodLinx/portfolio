@@ -6,7 +6,7 @@ const Driver = () => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div className={styles.form}>
+        <div className={styles.formBox}>
           <h2 className={styles.title}>Register as a Driver Here</h2>
           <form onSubmit="#Function goes here">
             <input type="text" placeholder="Enter Your Name..." />

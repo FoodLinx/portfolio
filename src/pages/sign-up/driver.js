@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
+import styles from '@/styles/signup/driver.module.css'
 
 const Driver = () => {
 
@@ -28,9 +29,10 @@ const Driver = () => {
   }
 
   return (
-    <div>
-      <div>
-        <h2>Register as a Driver Here</h2>
+    <div className={styles.container}>
+      <div className={styles.container}>
+        <div className={styles.formBox}>
+        <h2>Register As Our Driver</h2>
         <form onSubmit={registerDriver}>
           <input name='name' type="text" placeholder="Enter Your Name..." />
           <input name='email' type="text" placeholder="Enter Your Email Address..." />
@@ -38,6 +40,7 @@ const Driver = () => {
           <input name='registration' type="text" placeholder="Vehicle Reg, Number..." />
           <button type="submit">Register</button>
         </form>
+        </div>
       </div>
     </div>
   )

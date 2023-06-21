@@ -55,6 +55,10 @@
   border-radius: 6px;
 }
 
+.hero>.wrapper>.left>p {
+  font-size: 19px;
+}
+
 .hero>.wrapper>.left>p>a {
   text-decoration: none;
   color: #B2BCAA;
@@ -77,6 +81,10 @@
   border-radius: 6px;
 }
 
+.hero>.wrapper>.center>p {
+  font-size: 19px;
+}
+
 .hero>.wrapper>.center>p>a {
   text-decoration: none;
   color: #B2BCAA;
@@ -97,6 +105,10 @@
   height: 300px;
   width: 300px;
   border-radius: 6px;
+}
+
+.hero>.wrapper>.right>p {
+  font-size: 19px;
 }
 
 .hero>.wrapper>.right>p>a {

@@ -50,7 +50,7 @@ export default function Home() {
                 <div className={styles.right}>
                   <Image src={deliveryImage} alt="driver-image" />
                   <p>
-                    <Link href="/sign-up/driver">Sign to deliver here</Link>
+                    <Link href="/sign-up/driver">Sign up to deliver here</Link>
                   </p>
                 </div>
               </div>
@@ -58,7 +58,7 @@ export default function Home() {
 
             <div className={styles.map}>
               <h2>Restaurants Near You</h2>
-              Will display an embedded map here just to showcase location
+              <p>Will try to embed map here</p>
             </div>
           </div>
         </div>

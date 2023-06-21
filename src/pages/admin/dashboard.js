@@ -1,23 +1,58 @@
-import React from 'react'
+import { React, useState, useEffect } from 'react'
 import styles from '@/styles/admin/dashboard.module.css'
 import Navbar from '@/components/Navbar/Navbar'
+import { withPageAuthRequired } from '@auth0/nextjs-auth0';
+import ResturantDash from '@/components/ResturantDash/ResturantDash'
+import DriverDash from '@/components/DriverDash/DriverDash';
+import { useRouter } from 'next/router';
+import axios from 'axios';
 
 /**
  * PAGE MUST BE PROTECTED
  * @returns The dashboard for the admin
  */
 
-const Dashboard = () => {
-  return (
-    <>
-      <Navbar />
-      <div className={styles.container}>
-        <div className={styles.title}>
-          <h2>Admin Dashboard</h2>
-        </div>
-      </div>
-    </>
-  )
+
+export default () => {
+
+  const router = useRouter()
+  const [role, setRole] = useState('')
+  
+    useEffect(() => {
+      async function run() {
+        let options = {
+          method: 'GET',
+          headers: {
+            'content-type': 'application/json'
+          }
+        }
+        const response = await axios.get('http://localhost:3000/api/profiles/getRole', options)
+        if (response.status === 200) {
+          setRole(response.data.role)
+        }
+        else {
+          router.push('/')
+        }
+      }
+      run()
+      if (role === 'admin'){
+        return (
+          <>
+            <Navbar />
+            <div className={styles.container}>
+              <div className={styles.title}>
+                <h2>Admin Dashboard</h2>
+                <ResturantDash/>
+                <DriverDash/>
+              </div>
+            </div>
+          </>
+        )
+      }
+      router.push('/')
+    })
+    
+    
 }
 
-export default Dashboard
+export const getServerSideProps = withPageAuthRequired();

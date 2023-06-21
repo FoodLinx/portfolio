@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react'
 import styles from './navbar.module.css'
 import Link from 'next/link'
@@ -9,8 +10,6 @@ import axios from 'axios'
 export default function Navbar() {
   const { user } = useUser()
   const [role, setRole] = useState('')
-
-
   
   useEffect(() => {
     async function run() {
@@ -20,7 +19,7 @@ export default function Navbar() {
           'content-type': 'application/json'
         }
       }
-      const response = await axios.get('http://localhost:3000/api/hello', options)
+      const response = await axios.get('http://localhost:3000/api/profiles/getRole', options)
       if (response.status === 200) {
           setRole(response.data.role)
         }
@@ -131,13 +130,8 @@ export default function Navbar() {
               user && role === "admin" && (
                 <>
                 <div className={styles.link}>
-                  <Link href="#">
-                  Manage resturants
-                  </Link>
-                </div>
-                <div className={styles.link}>
-                  <Link href="#">
-                  Manage Drivers
+                  <Link href="/admin/dashboard">
+                  My Admin
                   </Link>
                 </div>
                 </>

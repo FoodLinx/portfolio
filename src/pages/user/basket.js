@@ -8,7 +8,7 @@ import { withPageAuthRequired } from '@auth0/nextjs-auth0';
  * MUST BE PROTECTED
  */
 
-export default ({/*user*/}) => {
+export default ({user}) => {
 
   return (
     <>

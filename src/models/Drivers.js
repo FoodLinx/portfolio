@@ -5,7 +5,6 @@ const driversSchema = new BaseSchema({
   name: {
     type: String,
     required: true,
-    unique: true
   },
   email: {
     type: String,
@@ -17,6 +16,7 @@ const driversSchema = new BaseSchema({
     required: true
   },
   registration: {
+    required: true,
     type: String,
   },
   login: {

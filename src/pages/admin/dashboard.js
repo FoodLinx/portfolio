@@ -6,6 +6,7 @@ import ResturantDash from '@/components/ResturantDash/ResturantDash'
 import DriverDash from '@/components/DriverDash/DriverDash';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import RegistrationsDash from '@/components/RegistrationsDash/RegistrationsDash';
 
 /**
  * PAGE MUST BE PROTECTED
@@ -42,6 +43,7 @@ export default () => {
             <div className={styles.container}>
               <div className={styles.title}>
                 <h2>Admin Dashboard</h2>
+                <RegistrationsDash/>
                 <ResturantDash/>
                 <DriverDash/>
               </div>

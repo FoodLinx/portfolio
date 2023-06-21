@@ -17,17 +17,6 @@
   height: 1000px;
 }
 
-.title {
-  margin-top: 2.5rem;
-  color: #B2BCAA;
-  font-size: 40px;
-}
-
-.title>p {
-  margin-top: 3rem;
-  font-size: 20px;
-}
-
 .hero {
   height: 400px;
   width: 100%;

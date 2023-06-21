@@ -5,13 +5,15 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import Catalog from "@/components/Catalog/Catalog";
 import deliveryImage from "../../public/delivery-image.jpg";
 import eatingImage from "../../public/eating-image.jpg";
 import restaurantImage from "../../public/restaurant-image.jpg";
+import axios from 'axios';
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ meals }) {
   return (
     <>
       <Head>
@@ -25,10 +27,7 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.wrapper}>
             <div className={styles.mealItems}>
-              <div className={styles.title}>
-                <h3>Pick Something Delicious</h3>
-                <p>Catalog will go here to display meal items</p>
-              </div>
+              <Catalog meals={meals} />
             </div>
 
             <div className={styles.hero}>
@@ -66,4 +65,14 @@ export default function Home() {
       </div>
     </>
   );
+}
+
+export async function getServerSideProps(){
+  const {data} = await axios.get('http://localhost:3000/api/meal')
+
+  return {
+    props: {
+      meals: data
+    }
+  }
 }

@@ -48,5 +48,6 @@
 ### Non-users
 - '/sign-up/resturant'
 - '/sign-up/driver'
+- '/sign-up/success'
 - '/about'
 - '/contact'

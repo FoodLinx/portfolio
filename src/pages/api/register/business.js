@@ -13,11 +13,10 @@ export default async function handler(req, res) {
             try {
                 await connectMongoDB()
                 const newRegistration = await Resturants.create({owner:owner, name:name, email:email, address:address, contact:contact})
-                console.log(req.body)
                 if(newRegistration) {
-                    return res.status(201).json({result: 'user created'})
+                    return res.status(201).json({result: 'Business registration notification created'})
                 }
-                return res.status(200).json({result: 'done'})
+                return res.status(200).json({error: 'Sorry, Please try again later'})
             } catch(error)
             {
                 console.log(error)

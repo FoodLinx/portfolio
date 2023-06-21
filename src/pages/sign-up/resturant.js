@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 
 const Restaurant = () => {
 
-    const router = useRouter()
+  const router = useRouter()
 
   // Handles the submit event on form submit.
   const registerBusiness = async (event) => {
@@ -25,7 +25,7 @@ const Restaurant = () => {
     if (response.status === 201){
         router.push('/sign-up/success')
     }
-    console.log(response.data)
+
   }
 
 

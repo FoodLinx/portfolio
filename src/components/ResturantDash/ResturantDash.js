@@ -6,7 +6,7 @@ import axios from "axios";
 const fetcher = async () => {
   const response = await axios.get('http://localhost:3000/api/resturants/getResturants')
   if (response.status === 200){
-    return response.data.registrations
+    return response.data.resturants
   }
     
 }

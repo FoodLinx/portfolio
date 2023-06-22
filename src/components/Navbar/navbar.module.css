@@ -15,7 +15,7 @@
 }
 
 .left {
-  width: 50%;
+  width: 30%;
   display: flex;
   align-items: center;
 }
@@ -38,7 +38,7 @@
 
 .right {
   display: flex;
-  width: 40%;
+  width: 60%;
   align-items: center;
   gap: 1.90rem;
 }
@@ -54,4 +54,62 @@
 .link>a:hover {
   color: #ffd700;
   cursor: pointer;
+}
+
+.addMeal {
+  border-radius: 5px;
+  border: 2px solid #ffd700;
+  width: 90px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addMeal>a {
+  text-decoration: none;
+  color: #ffd700;
+  font-size: 16px;
+}
+
+.addMeal:hover {
+  scale: 1.2;
+  background: #ffd700;
+  transition: 150ms all ease-in-out;
+}
+
+.addMeal>a:hover {
+  scale: 1.2;
+  color: #252323;
+  background-color: inherit;
+  transition: 150ms all ease-in-out;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  border: 2px solid #B2BCAA;
+  border-radius: 8px;
+  justify-content: center;
+}
+
+.logout>a {
+  text-decoration: none;
+  color: #B2BCAA;
+  font-size: 15px;
+  transition: 150ms all ease-in-out;
+}
+
+.logout:hover {
+  background-color: #B2BCAA;
+  color: #252323;
+  scale: 1.1
+}
+
+.logout>a:hover {
+  background-color: inherit;
+  color: #252323;
+  scale: 1.1;
 }

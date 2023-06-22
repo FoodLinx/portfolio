@@ -31,21 +31,20 @@
 }
 
 .category {
-  border: 2px solid transparent;
+  border: 2px solid #B2BCAA;
   padding: 0.5rem 1rem;
   background-repeat: 12px;
+  border-radius: 5px;
   cursor: pointer;
   transition: 150ms all;
 }
 
 .category .active {
   scale: 1.1;
-  background-color: #ffd700;
   color: #555;
 }
 
 .categories> :first-child {
-  background-color: #ffd700;
   color: #B2BCAA;
 }
 
@@ -90,12 +89,12 @@
   gap: 0.5rem;
 }
 
-.mealData > h5 {
+.mealData>h5 {
   text-transform: capitalize;
   font-size: 20px;
 }
 
-.mealData > span {
+.mealData>span {
   display: inline-block;
   margin-left: 0.25rem;
 }

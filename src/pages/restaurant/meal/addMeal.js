@@ -67,7 +67,7 @@ const AddMeal = () => {
 
   const postMeal = async (imageUrl) => {
     try {
-      const { data } = await axios.post("localhost:3000/api/meal", {
+      const { data } = await axios.post("http://localhost:3000/api/meal", {
         title,
         desc,
         category,

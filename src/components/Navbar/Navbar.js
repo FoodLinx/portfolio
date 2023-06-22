@@ -86,6 +86,9 @@ export default function Navbar() {
                 <div className={styles.link}>
                   <Link href="#">Order History</Link>
                 </div>
+                <div className={styles.addMeal}>
+                  <Link href="/restaurant/meal/addMeal">Add Meal</Link>
+                </div>
               </>
             )}
 
@@ -109,9 +112,6 @@ export default function Navbar() {
                 <div className={styles.link}>
                   <Link href="/admin/dashboard">My Admin</Link>
                 </div>
-                <div className={styles.addMeal}>
-                  <Link href="/restaurant/meal/addMeal">Add Meal</Link>
-                </div>
               </>
             )}
 
@@ -128,3 +128,4 @@ export default function Navbar() {
     </>
   );
 }
+

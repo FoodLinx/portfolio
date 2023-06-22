@@ -11,7 +11,7 @@ const driversSchema = new BaseSchema({
     required: true,
     unique: true
   },
-  mobile: {
+  contact: {
     type: String,
     required: true
   },
@@ -19,8 +19,9 @@ const driversSchema = new BaseSchema({
     required: true,
     type: String,
   },
-  login: {
-    type: String,
+  status: {
+    type: Boolean,
+    required: true
   },
 })
 

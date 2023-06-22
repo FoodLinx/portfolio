@@ -26,6 +26,7 @@ const Restaurant = () => {
     if (response.status === 201) {
       router.push('/sign-up/success')
     }
+    router.push('/sign-up/error')
 
   }
 

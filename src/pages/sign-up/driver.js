@@ -13,7 +13,7 @@ const Driver = () => {
     const formData = {
       name: event.target.name.value,
       email: event.target.email.value,
-      mobile: event.target.mobile.value,
+      contact: event.target.contact.value,
       registration: event.target.registration.value,
     }
     const options = {
@@ -36,7 +36,7 @@ const Driver = () => {
         <form onSubmit={registerDriver}>
           <input name='name' type="text" placeholder="Enter Your Name..." />
           <input name='email' type="text" placeholder="Enter Your Email Address..." />
-          <input name='mobile' type="text" placeholder="Enter YOur Mobile Number..." />
+          <input name='contact' type="text" placeholder="Enter YOur Mobile Number..." />
           <input name='registration' type="text" placeholder="Vehicle Reg, Number..." />
           <button type="submit">Register</button>
         </form>

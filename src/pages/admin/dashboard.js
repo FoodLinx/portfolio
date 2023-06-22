@@ -30,12 +30,17 @@ export default () => {
         const response = await axios.get('http://localhost:3000/api/profiles/getRole', options)
         if (response.status === 200) {
           setRole(response.data.role)
+          if (response.data.role !== 'admin') {
+            router.push('/')
+          }
         }
         else {
           router.push('/')
         }
       }
       run()
+    })
+    
       if (role === 'admin'){
         return (
           <>
@@ -51,10 +56,6 @@ export default () => {
           </>
         )
       }
-      router.push('/')
-    })
-    
-    
 }
 
 export const getServerSideProps = withPageAuthRequired();

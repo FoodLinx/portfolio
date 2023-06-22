@@ -31,75 +31,75 @@ const Catalog = ({ meals = [] }) => {
           <span
             onClick={() => setActiveCategory("all")}
             className={`${styles.category} ${activeCategory === "all" ? styles.active : ""
-            }`}
+              }`}
           >
             All
           </span>
           <span
-          onClick={() => setActiveCategory("pizza")}
+            onClick={() => setActiveCategory("pizza")}
             className={`${styles.category} ${activeCategory === "pizza" ? styles.active : ""
-            }`}
+              }`}
           >
             Pizza
           </span>
           <span
-          onClick={() => setActiveCategory("burger")}
+            onClick={() => setActiveCategory("burger")}
             className={`${styles.category} ${activeCategory === "burger" ? styles.active : ""
-            }`}
+              }`}
           >
             Burger
           </span>
           <span
             onClick={() => setActiveCategory("seafood")}
             className={`${styles.category} ${activeCategory === "seafood" ? styles.active : ""
-            }`}
+              }`}
           >
             SeaFood
           </span>
           <span
             onClick={() => setActiveCategory("chicken")}
             className={`${styles.category} ${activeCategory === "chicken" ? styles.active : ""
-            }`}
+              }`}
           >
             Chicken
           </span>
           <span
             onClick={() => setActiveCategory("steak")}
             className={`${styles.category} ${activeCategory === "steak" ? styles.active : ""
-            }`}
+              }`}
           >
             Steak
           </span>
           <span
             onClick={() => setActiveCategory("vegan")}
             className={`${styles.category} ${activeCategory === "vegan" ? styles.active : ""
-            }`}
+              }`}
           >
             Vegan
           </span>
         </div>
-        {filteredMeals?.length > 0 ? (
+        {filteredMeals.length > 0 ? (
           <div className={styles.meals}>
-            {filteredMeals?.map((meal) => (
+            {filteredMeals.map((meal) => (
               <Link
-              href={`/restaurant/meal/${meal?._id}`}
-              key={meal?._id}
-              className={styles.meal}
+                href={`/restaurant/meal/${meal?._id}`}
+                key={meal._id}
+                className={styles.meal}
               >
-                <div className={ styles.imgContainer}>
-                  <Image src={meal?.image} alt="" width={250} height={250} />
+                <div className={styles.imgContainer}>
+                  <Image src={meal.image} alt="" width={250} height={250} />
                 </div>
-                <div className={ styles.mealData}>
+                <div className={styles.mealData}>
                   <h5>{meal.title}</h5>
-                  <span>${meal?.price}</span>
+                  <span>${meal.price}</span>
                 </div>
               </Link>
             ))}
           </div>
         ) : (
-            <h2 className = {styles.noMeal}>
-        There are no {activeCategory} meals at the moment.
-            </h2>
+          <h2 className={styles.noMeal}>
+            There are no {activeCategory} meals at the moment.
+          </h2>
         )}
       </div>
     </div>

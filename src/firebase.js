@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB5OQfhwraM60j1hDSZDz2NTDckxueLAiA",
-  authDomain: "pioneering-mode-389610.firebaseapp.com",
-  projectId: "pioneering-mode-389610",
-  storageBucket: "pioneering-mode-389610.appspot.com",
-  messagingSenderId: "345358444548",
-  appId: "1:345358444548:web:bf84ed388b7b36a24cad51"
+  apiKey: "AIzaSyAw3Tz4Wf_h2NB4v3IDqEQe_jqROUI658s",
+  authDomain: "foodlinxv1.firebaseapp.com",
+  projectId: "foodlinxv1",
+  storageBucket: "foodlinxv1.appspot.com",
+  messagingSenderId: "588181115163",
+  appId: "1:588181115163:web:1804cdaba903eb8cd043be"
 };
 
 // Initialize Firebase

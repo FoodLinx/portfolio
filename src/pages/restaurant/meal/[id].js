@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import React from "react";
 import Image from "next/image";
 import axios from "axios";
+import styles from '@/styles/restaurant/meal/meal.module.css'
 
 /**
  * PAGE SHOULD BE PROTECTED

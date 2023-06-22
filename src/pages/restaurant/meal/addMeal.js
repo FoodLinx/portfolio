@@ -32,13 +32,15 @@ const AddMeal = () => {
   const router = useRouter();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // used to capture the form data
 
-    const storage = getStorage(app);
-    const filename = crypto.randomUUID() + photo.name;
-    const storageRef = ref(storage, filename);
-    const uploadFile = uploadBytesResumable(storageRef, photo);
+    // imports from firebase
+    const storage = getStorage(app); // sets the storage path for firebase
+    const filename = crypto.randomUUID() + photo.name; // self explanatory
+    const storageRef = ref(storage, filename); // creates a reference point for wer the file is stored
+    const uploadFile = uploadBytesResumable(storageRef, photo); // method of uploading the file
 
+    // this is code executed once the upload is in progress.
     uploadFile.on(
       "state_changed",
       (snapshot) => {
@@ -59,7 +61,8 @@ const AddMeal = () => {
         console.log(error);
       },
       async () => {
-        const fileUrl = await getDownloadURL(uploadFile.snapshot.ref);
+        const fileUrl = getDownloadURL(uploadFile.snapshot.ref);
+        console.log(fileUrl);
         postMeal(fileUrl);
       }
     );
@@ -74,7 +77,7 @@ const AddMeal = () => {
         price,
         image: imageUrl,
       });
-      router.push(`/meal/${data?._id}`);
+      router.push(`/meal/${data._id}`);
     } catch (error) {
       console.error(error);
     }
@@ -120,7 +123,7 @@ const AddMeal = () => {
                 onChange={(e) => setPhoto(e.target.files[0])}
               />
             </div>
-            <button type="submit" onClick={() => console.log("submitted")}>Upload Meal</button>
+            <button>Upload Meal</button>
           </form>
         </div>
       </div>

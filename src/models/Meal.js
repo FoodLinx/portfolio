@@ -25,12 +25,11 @@ const MealSchema = new BaseSchema({
     type: String,
     required: true
   },
-  featured: {
-    type: Boolean,
-    default: false
+  restaurantId: {
+    type: String,
+    required: true
   }
-  },
-)
+})
 
 const Meal = models.Meal || model('Meal', MealSchema)
 

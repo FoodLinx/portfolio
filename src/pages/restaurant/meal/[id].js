@@ -5,11 +5,16 @@ import axios from "axios";
 import styles from "@/styles/restaurant/meal/meal.module.css";
 
 /**
- * PAGE SHOULD BE PROTECTED
  * @returns The details of meal based on the meal id
  */
 
 const MealDetails = ({ meal }) => {
+  const handleClick = async (meal_id) => {
+    await axios.post("http://localhost:3000/api/basket/addToBasket", {
+      meal_id: meal_id,
+    });
+  };
+
   return (
     <>
       <Navbar />
@@ -34,7 +39,7 @@ const MealDetails = ({ meal }) => {
             </span>
             <button
               className={styles.orderButton}
-              onClick={() => console.log("confirming order")}
+              onClick={() => handleClick(meal._id)}
             >
               Order
             </button>

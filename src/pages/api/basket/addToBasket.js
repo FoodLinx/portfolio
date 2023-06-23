@@ -16,10 +16,10 @@ export default async function handler(req, res) {
                 try {
                   const list = await redis.get(key)
                   if (list) {
-                    list.push(/*meal id*/)
+                    list.push(req.body.meal_id)
                   }
                   else {
-                    const item = [/*meal id*/]
+                    const item = [req.body.meal_id]
                     await redis.set(key, item);
                   }
                   return res.status(200).json(value)

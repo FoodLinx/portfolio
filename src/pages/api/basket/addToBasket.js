@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     const session = await getSession(req, res)
     const user = session.user
     if (user) {
-        let key = `${user.sub}`
+        let key = `${user.sub.slice(6)}`
         const redis = new Redis({
             url: process.env.UPSTASH_REDIS_REST_URL,
             token: process.env.UPSTASH_REDIS_REST_TOKEN,

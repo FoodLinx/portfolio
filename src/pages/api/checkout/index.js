@@ -10,7 +10,8 @@ export default async function handler(req, res) {
     const user = session.user
     if (user) {
         const {delivery_address, amount } = req.body
-        let key = `${user.sub}`
+        let key = `${user.sub.slice(6)}`
+        console.log(key)
         const redis = new Redis({
             url: process.env.UPSTASH_REDIS_REST_URL,
             token: process.env.UPSTASH_REDIS_REST_TOKEN,
@@ -32,6 +33,7 @@ export default async function handler(req, res) {
                             await NewOrderNotification.create({order_id: newOrder._id, meal: meal._id, resturant_id: meal.resturant_id})
                         }
                     }
+                    await redis.del(key)
                     return res.status(200).json({message:'Order place successfully'})
                 }
                 else {

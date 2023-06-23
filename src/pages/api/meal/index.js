@@ -29,7 +29,7 @@ export default async function handler(req, res) {
 
       try {
         await connectMongoDB()
-        const meal = await Meal.create({ title: title, desc: desc, category: category, price: price, image: image, resturant_id: user.sub })
+        const meal = await Meal.create({ title: title, desc: desc, category: category, price: price, image: image, resturant_id: user.sub.slice(6) })
         if (meal) {
           return res.status(201).json(meal)
         }

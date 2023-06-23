@@ -26,7 +26,7 @@ export default async function handler(req, res) {
                         }
                         if (order_complete === true) {
                             const driver = await Drivers.aggregate({ $sample: { size: 1 } })
-                            const order = await Orders.findOneAndUpdate({_id:order_id}, {status:"ready for collection", driver:driver_id})
+                            const order = await Orders.findOneAndUpdate({_id:order_id}, {status:"ready for collection", driver:driver.driver_id})
                             if(order) {
                                 const notification = await NeworderNotification.findOneAndDelete({_id:req.body.notification_id})
                                 if (notification) {

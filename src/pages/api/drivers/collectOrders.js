@@ -11,7 +11,7 @@ export default async function handler(req, res) {
             case 'GET': {
                 try {
                     await connectMongoDB()
-                    const orders_for_collection = await Orders.find({driver: user.sub, status: "ready for collection"})
+                    const orders_for_collection = await Orders.find({driver: user.sub.slice(6), status: "ready for collection"})
                     return res.status(200).json(orders_for_collection)
                 } catch(error)
                 {

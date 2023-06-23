@@ -3,16 +3,23 @@ import React from "react";
 import Image from "next/image";
 import axios from "axios";
 import styles from "@/styles/restaurant/meal/meal.module.css";
+import { useRouter } from 'next/router';
 
 /**
  * @returns The details of meal based on the meal id
  */
 
 const MealDetails = ({ meal }) => {
+
+  const router = useRouter()
+
   const handleClick = async (meal_id) => {
-    await axios.post("http://localhost:3000/api/basket/addToBasket", {
+    const response = await axios.post("http://localhost:3000/api/basket/addToBasket", {
       meal_id: meal_id,
     });
+    if (response.status === 200) {
+      router.push('/')
+    }
   };
 
   return (

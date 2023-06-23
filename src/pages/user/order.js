@@ -13,13 +13,15 @@ import useSWR from 'swr'
 const fetcher = async () => {
   const response = await axios.get('http://localhost:3000/api/orders/getOrders')
   if (response.status === 200){
+    console.log(response.data.myOrders)
     return response.data.myOrders
+
   }
 }
 
 
 
-export default ({/*user*/}) => {
+export default () => {
   const { data, error } = useSWR('/api/orders/getOrders', fetcher)
 
   if (error) {console.log(error)}
@@ -27,14 +29,14 @@ export default ({/*user*/}) => {
     return (
       <>
         <Navbar />
-        <div className={styles.container}>
+        <div>
 
         <div>My Orders</div>
-        {data.map((order) => {
+        {data.map((order, index) => (
           <>
             <div>{order._id}</div>
           </>
-        })
+        ))
         }
         </div>
       </>

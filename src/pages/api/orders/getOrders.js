@@ -10,7 +10,7 @@ export default async function handler(req, res) {
             case 'GET': {
                 try {
                     await connectMongoDB()
-                    const myOrders = await Orders.find({_user_id: user.sub.slice(6)})
+                    const myOrders = await Orders.find({user_id: user.sub.slice(6)})
                     return res.status(200).json({myOrders})
                 } catch(error)
                 {

@@ -40,12 +40,12 @@ const ProccedToCheckOut = () => {
         <div className={styles.container}>
 
         <div>Basket items here</div>
-        {data.map((meal) => {
+        {data.map((meal) => (
           <>
             <div>title {meal.title}</div>
             <div>Desciription {meal.desc}</div>
           </>
-        })
+        ))
         }
         <div>Amount Due: Calculate Amount</div>
         <div>

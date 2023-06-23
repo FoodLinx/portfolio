@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import React from "react";
 import Image from "next/image";
 import axios from "axios";
-import styles from '@/styles/restaurant/meal/meal.module.css'
+import styles from "@/styles/restaurant/meal/meal.module.css";
 
 /**
  * PAGE SHOULD BE PROTECTED
@@ -16,7 +16,7 @@ const MealDetails = ({ meal }) => {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.left}>
-            <Image src={""} alt="" />
+            <Image src={meal.image} alt="" width={400} height={400} />
           </div>
           <div className={styles.right}>
             <h3>{meal.title}</h3>

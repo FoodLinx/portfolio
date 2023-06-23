@@ -12,6 +12,7 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 
+
 /**
  * PAGE SHOULD BE PROTECTED
  * @returns Returns a newly created meal.
@@ -61,7 +62,7 @@ const AddMeal = () => {
         console.log(error);
       },
       async () => {
-        const fileUrl = getDownloadURL(uploadFile.snapshot.ref);
+        const fileUrl = await getDownloadURL(uploadFile.snapshot.ref);
         console.log(fileUrl);
         postMeal(fileUrl);
       }
@@ -70,14 +71,14 @@ const AddMeal = () => {
 
   const postMeal = async (imageUrl) => {
     try {
-      const { data } = await axios.post("http://localhost:3000/api/meal", {
+      const { data } = await axios.post("http://localhost:3000/api/meal/", {
         title,
         desc,
         category,
         price,
         image: imageUrl,
       });
-      router.push(`/meal/${data._id}`);
+      router.push(`/restaurant/meal/${data._id}`);
     } catch (error) {
       console.error(error);
     }

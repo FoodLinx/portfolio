@@ -1,5 +1,5 @@
 import React from 'react'
-
+import styles from './delivered.module.css'
 
 /**
  * THIS PAGE WILL SHOW CURRENT ORDERS READY FOR PICKUP FROM THE RESTAURANT SIDE,
@@ -24,21 +24,23 @@ const PickUp = () => {
   if (error) {console.log(error)}
   if (data) {
     return (
-      <div>
+      <div className={styles.container}>
+      <div className={styles.wrapper}>
         {data.map((order) => {
-          <div>
-            <div>Delivered Orders</div>
-            <div>
+          <div className={styles.details}>
+            <h3>Delivered Orders</h3>
+            <p>
                 Commission: $35
-            </div>
+            </p>
           </div>
         })}
+        </div>
       </div>
       
     );
   }
   return (
-    <div> No Orders yet</div>
+    <div className={styles.noOrders}> No Orders yet</div>
   )
 }
 

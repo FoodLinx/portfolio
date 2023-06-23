@@ -1,6 +1,7 @@
 import React from "react";
 import useSWR from 'swr'
 import axios from "axios";
+import styles from './driverDash.module.css'
 
 const fetcher = async () => {
   const response = await axios.get('http://localhost:3000/api/drivers/getDrivers')
@@ -16,21 +17,23 @@ const DriverDash = () => {
   if (error) {console.log(error)}
   if (data) {
     return (
-      <div>
+      <div className={styles.container}>
+        <div className={styles.wrapper}>
           <h1>Registered Drivers</h1>
          {data.map((driver, index) => (
-            <div key={index}>
-              <div>Client ID: {driver._id}</div>
-              <div>Driver Name: {driver.name}</div>
-              <div>Driver Contact: {driver.contact}</div>
-              <div>Driver Address: {driver.registration}</div>
+            <div className={styles.details} key={index}>
+              <p>Client ID: {driver._id}</p>
+              <p>Driver Name: {driver.name}</p>
+              <p>Driver Contact: {driver.contact}</p>
+              <p>Driver Address: {driver.registration}</p>
             </div>
-      ))}
+         ))}
+        </div>
       </div>
     );
   }
   return (
-    <div> No Registered Drivers</div>
+    <div className={styles.noDrivers}> No Registered Drivers</div>
   )
 };
 

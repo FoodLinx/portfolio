@@ -1,0 +1,36 @@
+.container {
+  margin-top: 2rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  margin-top: 5rem;
+  height: 90%;
+  width: 90%;
+
+}
+
+.wrapper>h1 {
+  color: #ffd700;
+  font-size: 30px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.details>p {
+  color: #ffd700;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.noRestauranst {
+  color: #b2bcaa;
+  font-size: 30px;
+}

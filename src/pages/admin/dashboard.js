@@ -1,3 +1,5 @@
+/* eslint-disable react/display-name */
+/* eslint-disable import/no-anonymous-default-export */
 import { React, useState, useEffect } from 'react'
 import styles from '@/styles/admin/dashboard.module.css'
 import Navbar from '@/components/Navbar/Navbar'
@@ -46,7 +48,7 @@ export default () => {
           <>
             <Navbar />
             <div className={styles.container}>
-              <div className={styles.title}>
+              <div className={styles.wrapper}>
                 <h2>Admin Dashboard</h2>
                 <RegistrationsDash/>
                 <ResturantDash/>

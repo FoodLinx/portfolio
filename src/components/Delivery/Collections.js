@@ -1,5 +1,5 @@
 import React from 'react'
-
+import styles from './collection.module.css'
 
 /**
  * THIS PAGE WILL SHOW CURRENT ORDERS READY FOR PICKUP FROM THE RESTAURANT SIDE,
@@ -53,19 +53,21 @@ const PickUp = () => {
   if (error) {console.log(error)}
   if (data) {
     return (
-      <div>
+      <div className={styles.container}>
+        <div className={styles.wrapper}>
         {data.map((order) => {
-          <div>
-            <div>order data</div>
+          <div className={styles.details}>
+            <h4>order data</h4>
           <button onClick={collect(order._id)}>collect</button>
           </div>
         })}
+        </div>
       </div>
       
     );
   }
   return (
-    <div> No Orders waiting</div>
+    <div className={styles.noCollecions}> No Orders waiting</div>
   )
 }
 

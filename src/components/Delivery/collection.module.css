@@ -1,0 +1,30 @@
+.container {
+  margin-top: 2rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 90%;
+  height: 90%;
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.details>h4 {
+  color: #b2bcaa;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.noCollections {
+  color: #b2bcaa;
+  font-size: 30px;
+}

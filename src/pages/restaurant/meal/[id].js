@@ -30,11 +30,14 @@ const MealDetails = ({ meal }) => {
             </span>
             <p className={styles.desc}>
               Meal Description:{" "}
-              {meal.desc.length > 70
-                ? `${meal.desc.slice(0, 70)}...`
-                : meal.desc}
+              <span>
+                {" "}
+                {meal.desc.length > 70
+                  ? `${meal.desc.slice(0, 70)}...`
+                  : meal.desc}
+              </span>
             </p>
-            <span>
+            <span className={styles.price}>
               Price: $<span>{meal.price}</span>
             </span>
             <button

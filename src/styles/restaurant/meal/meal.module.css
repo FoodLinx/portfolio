@@ -1,18 +1,20 @@
 .container {
   margin-top: 3.75rem;
-  height: calc(100vh - 60px);
+  height: 500px;
   width: 100%
 }
 
 .wrapper {
   height: 100%;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   gap: 10rem;
 }
 
 .left {
+  margin-left: 3rem;
+  ;
   height: 80%;
   width: 50%;
 }
@@ -26,47 +28,54 @@
   display: flex;
   flex-direction: column;
   width: 50%;
-  height: 100%;
+  height: 80%;
   margin-left: 1.0rem;
 }
 
 .right>h3 {
-  margin-bottom: 3.75rem;
+  margin-top: 1.0rem;
   text-transform: capitalize;
   font-size: 30px;
-  color: #ffd700;
+  color: #B2BCAA;
 }
 
 .category {
-  font-size: 22px;
-  color: #f68613;
-  margin-bottom: 5rem;
+  margin-top: 2rem;
+  font-size: 20px;
+  color: #B2BCAA;
   font-weight: bold;
 }
 
 .category>span {
   text-transform: capitalize;
-  font-weight: 500;
+  font-weight: 900;
   padding: 0.25rem 0.75rem;
-  background-color: #c5850d;
-  color: #eae3e3;
+  background-color: #ffd700;
+  color: #252323;
   border-radius: 8px;
   margin-left: 1rem;
 }
 
 .desc {
-  margin-bottom: 3.75rem;
-  font-size: 18px;
-  font-weight: 500;
+  margin-top: 2rem;
+  font-size: 20px;
+  font-weight: 800;
   max-width: 250px;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  color: #B2BCAA;
+}
+
+.desc>span {
+  font-size: inherit;
+  font-weight: 500;
 }
 
 .price {
-  margin-bottom: 5rem;
+  margin-top: 6rem;
   font-size: 19px;
+  color: #B2BCAA
 }
 
 .price>span {
@@ -74,27 +83,28 @@
   font-size: 20px;
 }
 
-.readyIn {
-  color: #669;
-}
-
 .orderButton {
+  margin-top: 2rem;
   border: 1px solid transparent;
   outline: none;
-  margin-bottom: 10rem;
-  width: 200px;
+  width: 120px;
   padding: 1rem;
   border-radius: 8px;
   font-size: 18px;
   font-weight: bold;
-  background-color: #c5850d;
-  color: #efefef;
+  background-color: #ffd700;
+  color: #252323;
   cursor: pointer;
   transition: 150ms ease-in-out;
 }
 
 .orderButton:hover {
-  border-color: #c5850d;
-  color: #c5850d;
+  border-color: #B2BCAA;
+  color: #B2BCAA;
   background-color: transparent;
+}
+
+.readyIn {
+  color: #669;
+  margin-top: 5rem;
 }

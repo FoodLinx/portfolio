@@ -27,7 +27,7 @@
 .categories {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 .category {
@@ -56,11 +56,11 @@
 }
 
 .meals {
-  margin-top: 5rem;
+  margin-top: 3rem;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 5rem;
+  gap: 2rem;
   align-items: center;
 }
 

@@ -29,7 +29,6 @@ export default async function handler(req, res) {
 
       try {
         await connectMongoDB()
-        console.log(user)
         const meal = await Meal.create({ title: title, desc: desc, category: category, price: price, image: image, resturant_id: user.sub })
         if (meal) {
           return res.status(201).json(meal)

@@ -1,12 +1,12 @@
 .container {
   height: calc(100vh-60px);
   width: 100%;
-  margin-top: 7.5rem;
+  margin-top: 4.0rem;
 }
 
 .wrapper {
   height: 100%;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -57,7 +57,7 @@
 
 .meals {
   margin-top: 5rem;
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 5rem;
@@ -72,8 +72,8 @@
 }
 
 .imgContainer {
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
 }
 
 .imgContainer>img {

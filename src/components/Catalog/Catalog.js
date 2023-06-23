@@ -87,7 +87,7 @@ const Catalog = ({ meals = [] }) => {
                 className={styles.meal}
               >
                 <div className={styles.imgContainer}>
-                  <Image src={meal.image} alt="" width={250} height={250} />
+                  <Image src={meal.image} alt="" width={140} height={140} />
                 </div>
                 <div className={styles.mealData}>
                   <h5>{meal.title}</h5>

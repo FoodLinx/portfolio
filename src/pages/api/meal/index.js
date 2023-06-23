@@ -4,12 +4,6 @@ import { getSession } from "@auth0/nextjs-auth0";
 
 export default async function handler(req, res) {
   const { title, desc, category, price, image } = req.body
-  const session = await getSession(req, res)
-  const user = session.user
-
-  if (!user) {
-    return res.status(404).send({ error: "User not found.." })
-  }
 
   switch (req.method) {
     case 'GET': {
@@ -26,8 +20,16 @@ export default async function handler(req, res) {
     }
 
     case 'POST': {
+      const session = await getSession(req, res)
+      const user = session.user
+
+      if (!user) {
+        return res.status(404).send({ error: "User not found.." })
+      }
+
       try {
         await connectMongoDB()
+        console.log(user)
         const meal = await Meal.create({ title: title, desc: desc, category: category, price: price, image: image, resturant_id: user.sub })
         if (meal) {
           return res.status(201).json(meal)

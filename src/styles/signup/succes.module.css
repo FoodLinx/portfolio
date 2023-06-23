@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  height: 500px;
+  padding: 0;
+  margin: 0;
+}
+
+.success {
+  width: 80%;
+  height: 200px;
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success>p {
+  font-size: 20px;
+  color: #b2bcaa;
+}
+
+.success>p>a {
+  text-decoration: none;
+  color: inherit;
+}

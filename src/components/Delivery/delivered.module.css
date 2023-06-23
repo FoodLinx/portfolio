@@ -31,7 +31,8 @@
 }
 
 .noOrders {
+  margin-top: 3rem;
   color: #B2BCAA;
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 500;
 }

@@ -25,6 +25,8 @@
 }
 
 .noCollections {
+  margin-top: 3rem;
   color: #b2bcaa;
   font-size: 30px;
+  font-weight: 500;
 }

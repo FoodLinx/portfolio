@@ -55,10 +55,11 @@ export default function Home({ meals }) {
               </div>
             </div>
 
-            <div className={styles.map}>
+            {/* <div className={styles.map}>
               <h2>Restaurants Near You</h2>
               <p>Will try to embed map here</p>
-            </div>
+            </div> */}
+
           </div>
         </div>
         <Footer />
@@ -67,8 +68,8 @@ export default function Home({ meals }) {
   );
 }
 
-export async function getServerSideProps(){
-  const {data} = await axios.get('http://localhost:3000/api/meal')
+export async function getServerSideProps() {
+  const { data } = await axios.get('http://localhost:3000/api/meal')
 
   return {
     props: {

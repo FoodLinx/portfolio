@@ -1,8 +1,10 @@
-import React from 'react'
-import styles from '@/styles/restaurant/dashboard.module.css'
-import Navbar from '@/components/Navbar/Navbar';
+import React from "react";
+import styles from "@/styles/restaurant/dashboard.module.css";
+import Navbar from "@/components/Navbar/Navbar";
+import Catalog from "@/components/Catalog/Catalog";
+import axios from "axios";
 
-/** 
+/**
  * THIS IS THE RESTAURANT DASHBOARD
  * IT WILL ONLY DISPLAY THE CURRENT MEALS THAT THE RESTAURANT HAS UPLOADED.
  * MEALS WILL HAVE:
@@ -17,18 +19,25 @@ import Navbar from '@/components/Navbar/Navbar';
  * - orders ready for pickup
  * - new orders
  * - order history
-*/
+ */
 
-const Dashboard = () => {
-
+const Dashboard = ({ meals }) => {
   return (
     <>
       <Navbar />
-      <div className={styles.container}>
-        Restuarnt Dashboard Page
-      </div>
+      <Catalog meals={meals} />
     </>
-  )
-}
+  );
+};
 
 export default Dashboard;
+
+export async function getServerSideProps() {
+  const { data } = await axios.get("http://localhost:3000/api/meal");
+
+  return {
+    props: {
+      meals: data,
+    },
+  };
+}

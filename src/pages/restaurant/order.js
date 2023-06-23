@@ -35,23 +35,25 @@ const Orders = () => {
   if (error) {console.log(error)}
   if (data) {
     return (
-      <div>
+      <div className={styles.container}>
+      <div className={styles.wrapper}>
           <h1>Orders waiting for Preparation</h1>
          {data.map((item, index) => (
           <>
-            <span>item.order_id</span>
-            <div key={index}>
-            <div>Meal: {item.meal.title}</div>
-            <div>Image: {item.meal.image}</div>
-            <button onClick={ReadyForCollection(item.meal._id, item.order_id, item._id)}>Done</button>
+             <span>{item.order_id}</span>
+            <div className={styles.meal} key={index}>
+              <div className={styles.title}>Meal: {item.meal.title}</div>
+              <div className={styles.image}>Image: {item.meal.image}</div>
+              <button onClick={ReadyForCollection(item.meal._id, item.order_id, item._id)}>Done</button>
           </div>
           </>
       ))}
+        </div>
       </div>
     );
   }
   return (
-    <div> No Orders waiting</div>
+    <div className={styles.noMeal}> No Orders waiting</div>
   )
 }
 

@@ -1,9 +1,12 @@
+/* eslint-disable react/display-name */
+/* eslint-disable import/no-anonymous-default-export */
 import React from 'react'
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 import useSWR from 'swr'
 import axios from "axios";
 import { useRouter } from 'next/router';
 import Navbar from '@/components/Navbar/Navbar';
+import styles from '@/styles/user/basket.module.css'
 
 /**
  * WE WILL DISPLAY ITEMS IN THE CURRENT CART.
@@ -33,7 +36,9 @@ const ProccedToCheckOut = () => {
   if (data) {
     return (
       <>
-      <Navbar/>
+        <Navbar />
+        <div className={styles.container}>
+
         <div>Basket items here</div>
         { data.map((meal) => {
           <>
@@ -45,6 +50,7 @@ const ProccedToCheckOut = () => {
         <div>Amount Due: Calculate Amount</div>
         <div>
             <button onClick={ProccedToCheckOut}>Make Payment</button>
+          </div>
         </div>
       </>
     );

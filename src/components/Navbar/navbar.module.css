@@ -49,11 +49,13 @@
   text-align: center;
   color: #B2BCAA;
   width: 120px;
+  transition: 200ms all ease-in;
 }
 
 .link>a:hover {
   color: #ffd700;
   cursor: pointer;
+  scale: 1.2;
 }
 
 .addMeal {

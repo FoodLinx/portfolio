@@ -2,6 +2,8 @@ import React from 'react'
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 import useSWR from 'swr'
 import axios from "axios";
+import { useRouter } from 'next/router';
+import Navbar from '@/components/Navbar/Navbar';
 
 /**
  * WE WILL DISPLAY ITEMS IN THE CURRENT CART.
@@ -10,34 +12,39 @@ import axios from "axios";
  */
 
 const fetcher = async () => {
-  const response = await axios.get('http://localhost:3000/api/basket/index')
+  const response = await axios.get('http://localhost:3000/api/basket/')
   if (response.status === 200){
+    console.log(response.data.cart_meals)
     return response.data.cart_meals
   }
-    
 }
 
 
+export default () => {
+  const router = useRouter()
+  
+const ProccedToCheckOut = () => {
+  router.push('/user/checkout')
+}
 
-export default ({user}) => {
-
-  const { data, error } = useSWR('/api/basket/index', fetcher)
+  const { data, error } = useSWR('/api/basket/', fetcher)
 
   if (error) {console.log(error)}
   if (data) {
     return (
       <>
+      <Navbar/>
         <div>Basket items here</div>
-        { data.map((item, index) => {
+        { data.map((meal) => {
           <>
-            <div>{item.title}</div>
-            <div>{item.desc}</div>
+            <div>{meal.title}</div>
+            <div>{meal.desc}</div>
           </>
         })
         }
-        <div>Amount Due: $</div>
+        <div>Amount Due: Calculate Amount</div>
         <div>
-            <Button>Procced to checkout</Button>
+            <button onClick={ProccedToCheckOut}>Make Payment</button>
         </div>
       </>
     );

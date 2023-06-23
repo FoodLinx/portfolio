@@ -1,26 +1,27 @@
 import React from 'react'
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
-import useSWR from 'swr'
 import axios from "axios";
 import { useRouter } from 'next/router';
 
+export default () => {
 
-const makePayment = async () => {
-    const router = useRouter()
-  const response = await axios.post('http://localhost:3000/api/checkout/index')
-  if (response.status === 200){
-    return router.push('/')
-  }   
-}
+  const router = useRouter()
 
-export default ({user}) => {
+  const makePayment = async () => {
+    const response = await axios.post('http://localhost:3000/api/checkout/', {
+      delivery_address: '123 fake address Town Country', amount: 123.00
+    })
+    if (response.status === 200){
+      router.push('/')
+    }
+  }
 
     return (
       <>
         <div>Make Order Payment</div>
         <div>Amount Due: $100.00</div>
         <div>
-            <Button onclick={makePayment}>Pay</Button>
+            <button onClick={makePayment}>Pay</button>
         </div>
       </>
     );

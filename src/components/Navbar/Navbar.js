@@ -63,10 +63,10 @@ export default function Navbar() {
             {user && role === "user" && (
               <>
                 <div className={styles.link}>
-                  <Link href="#">Basket</Link>
+                  <Link href="/user/basket">Basket</Link>
                 </div>
                 <div className={styles.link}>
-                  <Link href="#">Orders</Link>
+                  <Link href="/user/order">Orders</Link>
                 </div>
               </>
             )}
@@ -75,16 +75,7 @@ export default function Navbar() {
             {user && role === "resturant" && (
               <>
                 <div className={styles.link}>
-                  <Link href="#">Incoming Orders</Link>
-                </div>
-                <div className={styles.link}>
-                  <Link href="#">Orders In Progress</Link>
-                </div>
-                <div className={styles.link}>
-                  <Link href="#">Orders Ready For Pickup</Link>
-                </div>
-                <div className={styles.link}>
-                  <Link href="#">Order History</Link>
+                  <Link href="/resturant/orders">Process Orders</Link>
                 </div>
                 <div className={styles.addMeal}>
                   <Link href="/restaurant/meal/addMeal">Add Meal</Link>
@@ -97,10 +88,7 @@ export default function Navbar() {
             {user && role === "driver" && (
               <>
                 <div className={styles.link}>
-                  <Link href="#">Orders Ready For Pickup</Link>
-                </div>
-                <div className={styles.link}>
-                  <Link href="#">Pickup History</Link>
+                  <Link href="/delivery/pickup">Orders Ready For Pickup</Link>
                 </div>
               </>
             )}

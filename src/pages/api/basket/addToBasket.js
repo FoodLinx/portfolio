@@ -1,6 +1,5 @@
-import { connectMongoDB } from '@/utils/mongodb'
 import { Redis } from '@upstash/redis'
-import getSession from "@auth0/nextjs-auth0";
+import { getSession } from "@auth0/nextjs-auth0";
 
 export default async function handler(req, res) {
     const session = await getSession(req, res)
@@ -22,7 +21,7 @@ export default async function handler(req, res) {
                     const item = [req.body.meal_id]
                     await redis.set(key, item);
                   }
-                  return res.status(200).json(value)
+                  return res.status(200).json({message:'added to cart'})
                 } catch(error)
                 {
                     console.log(error)

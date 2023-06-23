@@ -1,10 +1,10 @@
 import Meal from "@/models/Meal";
 import { connectMongoDB } from '@/utils/mongodb'
-import getSession from "@auth0/nextjs-auth0";
+import { getSession } from "@auth0/nextjs-auth0";
 
 export default async function handler(req, res) {
   const { title, desc, category, price, image } = req.body
-  const session = await getSession()
+  const session = await getSession(req, res)
   const user = session.user
 
   if (!user) {

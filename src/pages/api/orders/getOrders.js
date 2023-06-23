@@ -10,19 +10,8 @@ export default async function handler(req, res) {
             case 'GET': {
                 try {
                     await connectMongoDB()
-                    const orders_for_collection = await Orders.find({driver: user.sub.slice(6), status: "ready for collection"})
-                    return res.status(200).json(orders_for_collection)
-                } catch(error)
-                {
-                    console.log(error)
-                    return res.status(500).json({error: error.message})
-                }
-            }
-            case 'POST': {
-                try {
-                    await connectMongoDB()
-                    const order = await Orders.findOneAndUpdate({_id:req.body.order_id}, {status:"out on delivery"})
-                    return res.status(200).json(order)
+                    const myOrders = await Orders.find({_user_id: user.sub.slice(6)})
+                    return res.status(200).json({myOrders})
                 } catch(error)
                 {
                     console.log(error)

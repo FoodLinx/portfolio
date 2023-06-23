@@ -1,7 +1,7 @@
 import { connectMongoDB } from '@/utils/mongodb'
 import Orders from '@/models/Orders'
 import NeworderNotification from '@/models/NewOrderNotification'
-import getSession from "@auth0/nextjs-auth0";
+import { getSession } from "@auth0/nextjs-auth0";
 import Drivers from '@/models/Drivers'
 
 export default async function handler(req, res) {

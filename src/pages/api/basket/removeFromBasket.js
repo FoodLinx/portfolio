@@ -1,5 +1,5 @@
 import { Redis } from '@upstash/redis'
-import getSession from "@auth0/nextjs-auth0";
+import { getSession } from "@auth0/nextjs-auth0";
 
 export default async function handler(req, res) {
     const session = await getSession(req, res)

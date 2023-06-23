@@ -40,10 +40,10 @@ const ProccedToCheckOut = () => {
         <div className={styles.container}>
 
         <div>Basket items here</div>
-        { data.map((meal) => {
+        {data.map((meal) => {
           <>
-            <div>{meal.title}</div>
-            <div>{meal.desc}</div>
+            <div>title {meal.title}</div>
+            <div>Desciription {meal.desc}</div>
           </>
         })
         }
@@ -55,6 +55,9 @@ const ProccedToCheckOut = () => {
       </>
     );
   }
+  return(
+    <div>No Items in your basket</div>
+  )
 }
 
 export const getServerSideProps = withPageAuthRequired();

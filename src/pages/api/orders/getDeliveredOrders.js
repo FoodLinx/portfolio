@@ -1,6 +1,6 @@
 import { connectMongoDB } from '@/utils/mongodb'
 import Orders from '@/models/Orders'
-import getSession from "@auth0/nextjs-auth0";
+import { getSession } from "@auth0/nextjs-auth0";
 
 export default async function handler(req, res) {
     const session = await getSession(req, res)
@@ -11,7 +11,7 @@ export default async function handler(req, res) {
                 try {
                     await connectMongoDB()
                     const deliveredOrders = await Orders.find({driver: user.sub.slice(6), status: "delivered"})
-                    return res.status(200).json(deliveredOrders)
+                    return res.status(200).json({deliveredOrders})
                 } catch(error)
                 {
                     console.log(error)

@@ -1,7 +1,6 @@
 import { connectMongoDB } from '@/utils/mongodb'
-import Meal from '@/models/Meals'
 import orderNotification from '@/models/NewOrderNotification'
-import getSession from "@auth0/nextjs-auth0";
+import { getSession } from "@auth0/nextjs-auth0";
 
 export default async function handler(req, res) {
     const session = await getSession(req, res)

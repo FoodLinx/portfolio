@@ -69,10 +69,10 @@ export default async function handler(req, res) {
                             sendEmailPassword(name, password)
                             await Registrations.findOneAndDelete({identifier:req.body.identifier})
                             if (registration.type === 'business') {
-                                await Resturants.findOneAndUpdate({identifier:req.body.identifier}, {status:true})
+                                await Resturants.findOneAndUpdate({_id:req.body.identifier}, {status:true})
                             }
                             else {
-                                await Drivers.findOneAndUpdate({identifier:req.body.identifier}, {status:true})
+                                await Drivers.findOneAndUpdate({_id:req.body.identifier}, {status:true})
                             }
                             return res.status(200).json({result: ' {Account has been successfully created!'})
                         }

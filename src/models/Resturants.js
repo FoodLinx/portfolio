@@ -23,9 +23,10 @@ const resturantsSchema = new BaseSchema({
   contact: {
     type: String,
   },
-  login: {
-    type: String,
-  },
+  status : {
+    type: Boolean,
+    required: true
+  }
 })
 
 const Resturants = models.Resturants || model('Resturants', resturantsSchema)

@@ -25,7 +25,7 @@ const MealSchema = new BaseSchema({
     type: String,
     required: true
   },
-  restaurantId: {
+  resturant_id: {
     type: String,
     required: true
   }
